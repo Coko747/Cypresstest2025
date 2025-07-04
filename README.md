@@ -1,6 +1,5 @@
 # Cypresstest2025
-This project was created as part of the **QA Craft Growth Automation Challenge 2025**.
-Includes automated tests written in **Cypress** that validate essential flows such as navigation, login, and order management on the site [https://www.laboratoriodetesting.com](https://www.laboratoriodetesting.com).
+This repository was developed as part of the QA Craft Growth Automation Challenge 2025. It contains end-to-end test scenarios implemented using Cypress, targeting critical functional flows such as site navigation, user login, and order lifecycle management on https://www.laboratoriodetesting.com. The test suite aims to ensure application stability, regression coverage, and reliability of core features.
 ## Setup Requirements
 Before getting started, make sure you have the following installed on your machine:
 - [Node.js (recommended version: 18 or higher)](https://nodejs.org/)
