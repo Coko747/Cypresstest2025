@@ -1,4 +1,5 @@
-export const homeMainTitle = 'Déjate llevar por el camino';
+//export const homeMainTitle = 'Déjate llevar por el camino';
+export const homeMainTitle = '[data-at="brand-logo"] span' ;
 export const accederLink = 'Acceder';
 export const loginTitle = 'Inicia Sesión';
 export const emailInput = 'input[name="email"]';
