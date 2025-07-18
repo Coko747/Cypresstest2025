@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import * as elements from '../elements/addelements';
 import * as loginElements from '../elements/loginelements';
 import * as historyElements from '../elements/historyelements';
 
@@ -92,4 +93,27 @@ Cypress.Commands.add('viewDetails', () => {
     .first()
     .click();
     cy.get(historyElements.detalles, { timeout: 10000 }).should('be.visible');
+});
+// Scroll to Featured Products
+Cypress.Commands.add('scrollToFeaturedProducts', () => {
+  cy.contains('Productos destacados').scrollIntoView();
+});
+// agregar primer producto
+Cypress.Commands.add('addFirstAvailableProductToCart', () => {
+  cy.contains('Productos destacados').scrollIntoView();
+  cy.get(elements.firstProductCard).first().within(() => {
+    cy.contains(/añadir|agregar/i).click();
+  });
+});
+//Abrir detalle de carrito
+Cypress.Commands.add('openCartIcon', () => {
+  cy.get(elements.cartIcon).should('be.visible').click({ force: true });
+});
+// Validar productos del carrito (versión flexible)
+Cypress.Commands.add('validateCartHasProduct', () => {
+  cy.get(elements.cartImage).should('have.length.at.least', 1);
+  cy.get('button').contains('Ir al checkout').should('be.visible');
+  cy.get('.cart-grid p.text-black').should('have.length.at.least', 1);
+  cy.contains('$').should('exist');
+  cy.contains('Total:').should('be.visible');
 });
